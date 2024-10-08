@@ -6,7 +6,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/binary.css">
+    <style>
+        body {
+            font-family: 'Orbitron', 'Noto Sans', 'Arial Unicode MS', sans-serif;
+            background-color: #04040c;
+            color: #4285f4;
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Orbitron', 'Noto Sans', 'Arial Unicode MS', sans-serif;
+            background-color: #04040c;
+            color: #4285f4;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/binary.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+    .fallback-font {
+        font-family: 'Noto Sans', 'Arial Unicode MS', sans-serif;
+    }
+</style>
 </head>
 <body>
     <!-- Language Selection -->
@@ -47,7 +67,7 @@
                         <i class="fab fa-telegram"></i>
                     </a>
                     <a href="https://twitter.com/yourtwitter" target="_blank" class="social-icon-link">
-                        <span class="x-logo">&#x1d54f;</span>
+                        <span class="x-logo fallback-font">&#x1d54f;</span>
                     </a>
                 </div>
             </div>
@@ -84,7 +104,7 @@
                     <i class="fab fa-telegram"></i>
                 </a>
                 <a href="https://twitter.com/yourtwitter" target="_blank" class="social-icon-link">
-                    <span class="x-logo">&#x1d54f;</span>
+                    <span class="x-logo fallback-font">&#x1d54f;</span>
                 </a>
             </div>
         </section>
@@ -115,7 +135,7 @@
                         <i class="fab fa-telegram"></i>
                     </a>
                     <a href="https://twitter.com/yourtwitter" target="_blank" class="social-icon-link">
-                        <span class="x-logo">&#x1d54f;</span>
+                        <span class="x-logo fallback-font">&#x1d54f;</span>
                     </a>
                 </div>
                 <p class="disclaimer" data-i18n="disclaimer">※ This website is operated by the paradoxes of quantum mechanics. Schrödinger's cat is safe.</p>
@@ -126,9 +146,22 @@
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/binary.js"></script>
     <script src="assets/js/language.js"></script>
     <script>
         document.getElementById('language-select').addEventListener('change', function() {
+            if (this.value === 'qc') {
+                document.body.classList.add('quantum-mode');
+                initializeBinaryAnimation(); // バイナリアニメーションを確実に初期化する
+                document.body.style.setProperty('--binary-color', '#00bfff'); // 青文字をより鮮やかに
+                document.querySelectorAll('.binary-text').forEach(element => {
+                    element.style.color = '#ffffff'; // 背景以外のバイナリ文字を白に修正
+                });
+            } else {
+                document.body.classList.remove('quantum-mode');
+                document.body.style.removeProperty('--binary-color');
+            }
+        });
             if (this.value === 'qc') {
                 document.body.classList.add('quantum-mode');
                 initializeBinaryAnimation(); // バイナリアニメーションを確実に初期化する
@@ -136,9 +169,10 @@
                 document.body.classList.remove('quantum-mode');
             }
         });
-
+    </script>
+    <script>
         function copyAddress() {
-            const address = document.getElementById('contract-address').textContent.replace('Contract Address: ', '');
+            const address = '0xfE7Aa1F52633b0812bCAAa3fab4A4e2D3182Dbc4';
             navigator.clipboard.writeText(address).then(() => {
                 alert('Contract Address Copied!');
             }).catch(err => {
