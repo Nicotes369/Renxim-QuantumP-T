@@ -1,0 +1,263 @@
+/\* assets/css/style.css \*/
+
+/\* General Styles */
+body {
+margin: 0;
+padding: 0;
+font-family: 'Noto Sans', 'Arial', sans-serif;
+background: url('../images/background.gif') no-repeat center center fixed;
+background-size: cover;
+background-color: #000000;
+color: #040488;
+direction: ltr; /* Default direction \*/
+}
+
+\#main-content {
+position: relative;
+z-index: 1;
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/\* Language Selector \*/
+.language-selector {
+position: fixed;
+top: 10px;
+right: 10px;
+z-index: 2;
+}
+
+\#language-select {
+padding: 8px 12px;
+font-size: 16px;
+background-color: #04040c;
+color: #040488;
+border: 1px solid #1c1c1c;
+border-radius: 5px;
+cursor: pointer;
+}
+
+/\* Header Styles \*/
+header {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 100px 20px;
+background-color: rgba(4, 4, 44, 0.5);
+}
+
+.logo {
+width: 150px;
+margin-bottom: 20px;
+}
+
+.header-content h1 {
+font-size: 48px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.header-content p {
+font-size: 24px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+.contract-address {
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 18px;
+margin-bottom: 20px;
+color: #040454;
+}
+
+.contract-address span {
+margin-right: 10px;
+}
+
+.copy-icon {
+padding: 10px;
+font-size: 20px;
+cursor: pointer;
+background-color: #04042b;
+color: #ffffff;
+border: none;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.copy-icon {
+background-color: #1e90ff;
+}
+
+.social-icons {
+color: #ffffff;
+margin: 0 10px;
+text-decoration: none;
+font-size: 1.5rem;
+transition: color 0.3s;
+}
+
+.social-icons a {
+color: #4285f4;
+}
+
+/\* Section Styles \*/
+section {
+padding: 60px 20px;
+background-color: rgba(0, 0, 0, 0.8);
+margin-bottom: 40px;
+border-radius: 10px;
+}
+
+section h2 {
+font-size: 36px;
+margin-bottom: 30px;
+text-align: center;
+color: #040488;
+}
+
+section p, section ul {
+font-size: 18px;
+line-height: 1.6;
+max-width: 800px;
+margin: 0 auto 20px auto;
+color: #ffffff;
+}
+
+blockquote {
+font-size: 24px;
+font-style: italic;
+text-align: center;
+margin: 40px auto;
+max-width: 800px;
+color: #ffdd57;
+}
+
+/\* FAQ Styles \*/
+.faq-item {
+margin-bottom: 40px;
+}
+
+.faq-item h3 {
+font-size: 24px;
+margin-bottom: 10px;
+color: #040488;
+}
+
+.faq-item p {
+font-size: 18px;
+color: #ffffff;
+}
+
+.buy-button {
+display: inline-block;
+padding: 15px 30px;
+background-color: #1e90ff;
+color: #ffffff;
+text-decoration: none;
+font-size: 18px;
+margin-top: 20px;
+border-radius: 5px;
+transition: background-color 0.3s ease;
+}
+
+.buy-button {
+background-color: #63b8ff;
+}
+
+/\* Footer Styles \*/
+footer {
+text-align: center;
+padding: 40px 20px;
+background-color: rgba(0, 0, 0, 0.9);
+border-top: 2px solid #040488;
+}
+
+.footer-content {
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.footer-content p {
+margin: 10px 0;
+color: #888888;
+}
+
+.disclaimer {
+font-size: 14px;
+color: #888888;
+}
+
+.final-message {
+font-size: 16px;
+margin-top: 20px;
+color: #ffffff;
+}
+
+/\* Quantum Computer Mode Styles */
+body.quantum-mode {
+background-color: #000000;
+direction: ltr; /* Reset direction \*/
+}
+
+body.quantum-mode #main-content {
+display: none;
+}
+
+body.quantum-mode .language-selector {
+color: #040488;
+}
+
+body.quantum-mode #language-select {
+background-color: #000000;
+color: #040488;
+border: 1px solid #040488;
+}
+
+/\* RTL Styles \*/
+[dir="rtl"] .language-selector {
+right: auto;
+left: 10px;
+}
+
+[dir="rtl"] header {
+text-align: center;
+}
+
+[dir="rtl"] .contract-address {
+justify-content: center;
+text-align: center;
+}
+
+[dir="rtl"] .social-icons {
+justify-content: center;
+}
+
+[dir="rtl"] .contract-address span {
+margin-right: 10px;
+margin-left: 0;
+}
+
+@media (max-width: 768px) {
+.header-content h1 {
+font-size: 32px;
+}
+
+```
+.header-content p {
+    font-size: 18px;
+}
+
+.social-icons a img {
+    width: 30px;
+    height: 30px;
+}
+
+/* その他の調整 */
+```
+
+}
