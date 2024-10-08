@@ -1,58 +1,79 @@
-// JavaScript for Binary Effect Enhancements and Improvements
+// assets/js/binary.js
 
-document.addEventListener('DOMContentLoaded', () => {
-    const body = document.body;
-    const quantumMode = body.classList.contains('quantum-mode');
+// Function to create binary rain effect
+function startBinaryEffect() {
+    const binaryContainer = document.createElement('div');
+    binaryContainer.id = 'binary-container';
+    binaryContainer.style.position = 'fixed';
+    binaryContainer.style.top = '0';
+    binaryContainer.style.left = '0';
+    binaryContainer.style.width = '100%';
+    binaryContainer.style.height = '100%';
+    binaryContainer.style.pointerEvents = 'none';
+    binaryContainer.style.zIndex = '100';
+    document.body.appendChild(binaryContainer);
 
-    if (quantumMode) {
-        initializeBinaryRain();
+    const createBinaryDrop = () => {
+        const binaryDrop = document.createElement('div');
+        binaryDrop.innerText = Math.random() < 0.5 ? '0' : '1';
+        binaryDrop.style.position = 'absolute';
+        binaryDrop.style.top = '-50px';
+        binaryDrop.style.left = `${Math.random() * 100}%`;
+        binaryDrop.style.fontSize = `${Math.random() * 20 + 10}px`;
+        binaryDrop.style.color = '#00ff00';
+        binaryDrop.style.opacity = Math.random();
+        binaryDrop.style.animation = `fall ${Math.random() * 3 + 2}s linear infinite`;
+        binaryContainer.appendChild(binaryDrop);
+
+        setTimeout(() => {
+            binaryDrop.remove();
+        }, (Math.random() * 3000) + 2000);
+    };
+
+    const interval = setInterval(createBinaryDrop, 100);
+    window.binaryInterval = interval;
+}
+
+// Function to stop binary rain effect
+function stopBinaryEffect() {
+    const binaryContainer = document.getElementById('binary-container');
+    if (binaryContainer) {
+        binaryContainer.remove();
     }
+    if (window.binaryInterval) {
+        clearInterval(window.binaryInterval);
+        window.binaryInterval = null;
+    }
+}
 
-    // Language select event listener to trigger quantum mode
-    const languageSelect = document.getElementById('language-select');
-    languageSelect.addEventListener('change', (e) => {
-        if (e.target.value === 'qc') {
-            body.classList.add('quantum-mode');
-            initializeBinaryRain();
-        } else {
-            body.classList.remove('quantum-mode');
-            removeBinaryRain();
+// Start binary effect when quantum mode is activated
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.body.classList.contains('quantum-mode')) {
+        startBinaryEffect();
+    }
+});
+
+// Listen for changes in quantum mode
+const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.attributeName === 'class') {
+            if (document.body.classList.contains('quantum-mode')) {
+                startBinaryEffect();
+            } else {
+                stopBinaryEffect();
+            }
         }
     });
 });
 
-function initializeBinaryRain() {
-    const binaryBg = document.createElement('div');
-    binaryBg.classList.add('binary-bg');
-    document.body.appendChild(binaryBg);
+observer.observe(document.body, { attributes: true });
 
-    for (let i = 0; i < 150; i++) {
-        createBinaryStream(binaryBg);
+// Animation for binary rain
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes fall {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(100vh); }
     }
-}
-
-function createBinaryStream(container) {
-    const binaryStream = document.createElement('span');
-    binaryStream.classList.add('binary-char');
-    binaryStream.style.left = Math.random() * 100 + 'vw';
-    binaryStream.style.animationDuration = 10 + Math.random() * 25 + 's';
-    binaryStream.textContent = Math.random() > 0.5 ? '0' : '1';
-    container.appendChild(binaryStream);
-
-    setInterval(() => {
-        binaryStream.textContent = Math.random() > 0.5 ? '0' : '1';
-    }, 300);
-
-    // Remove the binary stream after its animation ends to conserve memory
-    binaryStream.addEventListener('animationend', () => {
-        container.removeChild(binaryStream);
-        createBinaryStream(container);
-    });
-}
-
-function removeBinaryRain() {
-    const binaryBg = document.querySelector('.binary-bg');
-    if (binaryBg) {
-        binaryBg.remove();
-    }
-}
+`;
+document.head.appendChild(style);
