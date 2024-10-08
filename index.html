@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Renxim (RXM) — The Coolest Quantum Meme on QL1 Ecosystem</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Arabic&family=Noto+Sans+Hebrew&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/binary.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <!-- Language Selection -->
@@ -37,16 +38,16 @@
                 <p data-i18n="welcome-message">"As the observer, you determine the future of Renxim — let's collapse the wave function!"</p>
                 <!-- Contract Address -->
                 <div class="contract-address">
-                    <span id="contract-address" data-i18n="contract-address" style="color: #040488;">Contract Address: 0xfE7Aa1F52633b0812bCAAa3fab4A4e2D3182Dbc4</span>
-                    <button onclick="copyAddress()" class="copy-icon">▣</button>
+                    <span id="contract-address" data-i18n="contract-address" style="color: #ffffff; font-weight: bold;">Contract Address: 0xfE7Aa1F52633b0812bCAAa3fab4A4e2D3182Dbc4</span>
+                    <button onclick="copyAddress()" class="copy-icon" style="background-color: #1e90ff; color: #ffffff; border: none; border-radius: 5px; padding: 10px; margin-left: 10px; cursor: pointer;">Copy</button>
                 </div>
                 <!-- Social Icons -->
                 <div class="social-icons">
                     <a href="https://t.me/yourtelegram" target="_blank" class="social-icon-link">
-                        <i class="fab fa-telegram-plane"></i>
+                        <i class="fab fa-telegram"></i>
                     </a>
                     <a href="https://twitter.com/yourtwitter" target="_blank" class="social-icon-link">
-                        <i class="fab fa-x-twitter"></i>
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
             </div>
@@ -56,7 +57,7 @@
         <section id="about">
             <h2 data-i18n="about-heading">About Renxim (RXM)</h2>
             <p data-i18n="about-description">Renxim (RXM) is a cutting-edge meme coin developed by two experts, Ren and Xim, projecting Quantum Physics and Quantum Theory. Operated by the community, it stands out as the coolest entity on the QL1 ecosystem.</p>
-            <blockquote data-i18n="about-quote">"Renxim exists like Schr\u00f6dinger's cat, intertwined with the fine quantum vibrations and cosmic rhythms, representing infinite possibilities. Your participation as a new observer collapses this wave function, creating a new wave of radiant and abundant future reality."</blockquote>
+            <blockquote data-i18n="about-quote">"Renxim exists like Schrödinger's cat, intertwined with the fine quantum vibrations and cosmic rhythms, representing infinite possibilities. Your participation as a new observer collapses this wave function, creating a new wave of radiant and abundant future reality."</blockquote>
         </section>
 
         <!-- Timeline Section -->
@@ -80,10 +81,10 @@
             <p data-i18n="community-message">Join us in quantum entanglement and shape the future of RXM together!</p>
             <div class="social-icons">
                 <a href="https://t.me/yourtelegram" target="_blank" class="social-icon-link">
-                    <i class="fab fa-telegram-plane"></i>
+                    <i class="fab fa-telegram"></i>
                 </a>
                 <a href="https://twitter.com/yourtwitter" target="_blank" class="social-icon-link">
-                    <i class="fab fa-x-twitter"></i>
+                    <i class="fab fa-twitter"></i>
                 </a>
             </div>
         </section>
@@ -111,10 +112,10 @@
             <div class="footer-content">
                 <div class="social-icons">
                     <a href="https://t.me/yourtelegram" target="_blank" class="social-icon-link">
-                        <i class="fab fa-telegram-plane"></i>
+                        <i class="fab fa-telegram"></i>
                     </a>
                     <a href="https://twitter.com/yourtwitter" target="_blank" class="social-icon-link">
-                        <i class="fab fa-x-twitter"></i>
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
                 <p class="disclaimer" data-i18n="disclaimer">※ This website is operated by the paradoxes of quantum mechanics. Schrödinger's cat is safe.</p>
@@ -126,5 +127,15 @@
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
     <script src="assets/js/language.js"></script>
+    <script>
+        function copyAddress() {
+            const address = document.getElementById('contract-address').innerText;
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Contract Address Copied!');
+            }).catch(err => {
+                alert('Failed to copy the contract address');
+            });
+        }
+    </script>
 </body>
 </html>
