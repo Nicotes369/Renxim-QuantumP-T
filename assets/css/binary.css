@@ -1,91 +1,84 @@
-/* Quantum Computer Mode Styles - Enhanced */
+/* Quantum Computer Mode - Binary Animation Styles */
 body.quantum-mode {
     background-color: #000000;
-    color: #ffffff;
-    direction: ltr;
+    overflow: hidden;
 }
 
-body.quantum-mode #main-content {
-    display: none;
-}
-
-body.quantum-mode .language-selector {
-    color: #040488;
-}
-
-body.quantum-mode #language-select {
-    background-color: #000000;
-    color: #040488;
-    border: 1px solid #040488;
-}
-
-/* Binary Flow - Matrix Style Integration */
-body.quantum-mode::after {
-    content: "";
+/* Background Binary Stream Animation */
+.binary-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(4, 4, 136, 0.5) 0%,
-        rgba(4, 4, 136, 0.5) 2px,
-        transparent 2px,
-        transparent 8px
-    );
-    animation: binary-flow 8s linear infinite;
     z-index: 0;
+    pointer-events: none;
+    animation: binaryBackgroundFlow 30s linear infinite;
 }
 
-@keyframes binary-flow {
-    from {
+@keyframes binaryBackgroundFlow {
+    0% {
         background-position: 0 0;
     }
-    to {
+    100% {
         background-position: 0 100%;
     }
 }
 
-/* Binary Text Overlay - Updated */
-.binary-text {
+/* Improved Binary Character Styling */
+.binary-character {
     position: absolute;
-    color: #ffffff;
-    font-size: 16px;
-    z-index: 3;
-    animation: text-fade 12s infinite;
+    color: #00bfff; /* More vibrant blue for visibility */
+    font-size: 20px;
+    animation: drop 10s linear infinite;
 }
 
-@keyframes text-fade {
-    0%, 100% {
+@keyframes drop {
+    0% {
+        top: -10%;
         opacity: 0;
     }
-    50% {
+    10% {
         opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
     }
 }
 
-/* Blue Binary Flow - Additional Effect */
-body.quantum-mode .binary-background {
+/* Non-Background Binary Characters */
+.non-background-binary {
+    color: #ffffff; /* Updated to white for better visibility */
+    animation: glowBinaryText 1.5s infinite alternate;
+}
+
+@keyframes glowBinaryText {
+    0% {
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+    }
+    100% {
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+    }
+}
+
+/* Other Improvements */
+.binary-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 255, 0.3) 10%,
-        rgba(0, 0, 139, 0.8) 90%
-    );
-    animation: blue-binary-flow 10s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
 }
 
-@keyframes blue-binary-flow {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 0 200%;
+@media (max-width: 768px) {
+    .binary-character {
+        font-size: 16px;
     }
 }
