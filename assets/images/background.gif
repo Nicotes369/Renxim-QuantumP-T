@@ -1,1 +1,6 @@
+/* Background (background.gif): */
+- Update the background to be a dynamic animation, inspired by the "Matrix"-style cascading binary code, but with a modern twist.
+- Animation: Cascading blue numbers (0 and 1) falling from top to bottom, similar to the visual effect described previously.
+- Colors: Ensure the blue is vibrant, with different brightness levels to create depth and contrast with the darker background.
+- Add a reflective ground surface effect that visually extends the digital space, creating an immersive 3D-like environment.
 
