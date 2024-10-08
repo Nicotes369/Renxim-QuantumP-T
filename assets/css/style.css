@@ -1,11 +1,11 @@
-/* General Styles - Improved */
+/* General Styles */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Orbitron', 'Noto Sans', 'Arial', sans-serif;
+    font-family: 'Orbitron', 'Noto Sans', 'Arial Unicode MS', sans-serif;
     background: url('../images/background.gif') no-repeat center center fixed;
     background-size: cover;
-    color: #ffffff;
+    color: #4285f4;
     direction: ltr;
 }
 
@@ -17,25 +17,7 @@ body {
     padding: 0 20px;
 }
 
-/* Language Selector */
-.language-selector {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 2;
-}
-
-#language-select {
-    padding: 8px 12px;
-    font-size: 16px;
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #cccccc;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-/* Header Styles - Updated */
+/* Header Styles */
 header {
     display: flex;
     flex-direction: column;
@@ -43,7 +25,6 @@ header {
     justify-content: center;
     padding: 100px 20px;
     background-color: rgba(0, 0, 0, 0.5);
-    animation: fadeIn 2s ease-in;
 }
 
 .logo {
@@ -56,7 +37,6 @@ header {
     margin-bottom: 20px;
     text-align: center;
     text-transform: uppercase;
-    animation: glow 1.5s infinite alternate;
 }
 
 .header-content p {
@@ -66,7 +46,28 @@ header {
     color: #d3d3d3;
 }
 
-/* Contract Address Styles - Improved */
+/* Heading Colors Update */
+#about-heading,
+#timeline-heading,
+#community-heading,
+#faq-heading {
+    color: #4285f4;
+}
+
+/* Text Colors Update */
+#about-description,
+#key-message-label,
+#timeline-question,
+#community-message,
+#faq-a1,
+#faq-a2,
+#faq-a3,
+.disclaimer,
+.final-message {
+    color: #ffffff;
+}
+
+/* Contract Address Styles */
 .contract-address {
     display: flex;
     align-items: center;
@@ -79,7 +80,6 @@ header {
     color: #ffffff;
     box-shadow: 0px 0px 15px rgba(30, 144, 255, 0.8);
     transition: transform 0.3s ease;
-    font-weight: bold;
 }
 
 .contract-address:hover {
@@ -88,7 +88,7 @@ header {
 
 .contract-address span {
     margin-right: 10px;
-    color: #ffffff;
+    color: #63b8ff;
 }
 
 .contract-address button {
@@ -107,12 +107,11 @@ header {
     transform: scale(1.1);
 }
 
-/* Social Icons - Enhanced */
+/* Social Icons */
 .social-icons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
-    animation: fadeIn 2s ease-in;
 }
 
 .social-icons a {
@@ -128,13 +127,12 @@ header {
     transform: scale(1.2);
 }
 
-/* Section Styles - Updated */
+/* Section Styles */
 section {
     padding: 60px 20px;
     background-color: rgba(0, 0, 0, 0.8);
     margin-bottom: 40px;
     border-radius: 10px;
-    animation: slideUp 1.5s ease-out;
 }
 
 section h2 {
@@ -142,7 +140,7 @@ section h2 {
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
-    color: #63b8ff;
+    color: #4285f4;
 }
 
 section p, section ul {
@@ -150,6 +148,7 @@ section p, section ul {
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 20px auto;
+    color: #ffffff;
 }
 
 blockquote {
@@ -161,20 +160,20 @@ blockquote {
     color: #ffdd57;
 }
 
-/* FAQ Styles - Improved */
+/* FAQ Styles */
 .faq-item {
     margin-bottom: 40px;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
 .faq-item h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #63b8ff;
+    color: #4285f4;
 }
 
 .faq-item p {
     font-size: 18px;
+    color: #ffffff;
 }
 
 .buy-button {
@@ -194,7 +193,7 @@ blockquote {
     transform: scale(1.1);
 }
 
-/* Footer Styles - Improved */
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 40px 20px;
@@ -214,12 +213,13 @@ footer {
 
 .disclaimer {
     font-size: 14px;
-    color: #888888;
+    color: #ffffff;
 }
 
 .final-message {
     font-size: 16px;
     margin-top: 20px;
+    color: #ffffff;
 }
 
 /* RTL Styles */
@@ -259,8 +259,6 @@ footer {
         width: 30px;
         height: 30px;
     }
-    
-    /* Responsive Adjustments */
 }
 
 /* Animations */
@@ -277,10 +275,4 @@ footer {
 @keyframes slideUp {
     from { transform: translateY(100px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
-}
-
-/* Button Click Feedback - Copy Button */
-.contract-address button:active {
-    background-color: #4682b4;
-    transform: scale(0.95);
 }
