@@ -1,0 +1,78 @@
+/* assets/css/binary.css */
+
+/* Quantum Computer Mode Styles */
+body.quantum-mode {
+    background-color: #000000;
+    direction: ltr; /* Reset direction */
+    color: #00ff00; /* Classic green for binary text */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body.quantum-mode #main-content {
+    display: none;
+}
+
+body.quantum-mode .language-selector {
+    color: #00ff00;
+}
+
+body.quantum-mode #language-select {
+    background-color: #000000;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+body.quantum-mode .contract-address {
+    color: #00ff00;
+}
+
+body.quantum-mode .copy-icon {
+    background-color: #00ff00;
+    color: #000000;
+    border: 1px solid #00ff00;
+}
+
+body.quantum-mode .copy-icon:hover {
+    background-color: #ffffff;
+    color: #00ff00;
+}
+
+body.quantum-mode .social-icons a {
+    color: #00ff00;
+}
+
+/* Quantum Effect for Headers */
+body.quantum-mode h1, body.quantum-mode h2 {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
+}
+
+/* Quantum Binary Animation */
+@keyframes binary-flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+body.quantum-mode .binary-text {
+    animation: binary-flicker 1s infinite;
+}
+
+/* Responsive Quantum Styles */
+@media (max-width: 768px) {
+    body.quantum-mode {
+        font-size: 14px;
+    }
+
+    body.quantum-mode #language-select {
+        font-size: 14px;
+    }
+
+    body.quantum-mode .copy-icon {
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    body.quantum-mode h1, body.quantum-mode h2 {
+        font-size: 24px;
+    }
+}
