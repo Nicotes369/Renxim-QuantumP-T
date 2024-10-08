@@ -1,46 +1,91 @@
-/* Quantum Computer Mode Styles */
+/* Quantum Computer Mode Styles - Enhanced */
 body.quantum-mode {
-    background: #000000;
+    background-color: #000000;
     color: #ffffff;
-    overflow: hidden;
+    direction: ltr;
 }
 
-/* Binary Animation - Background */
-#binary-animation {
+body.quantum-mode #main-content {
+    display: none;
+}
+
+body.quantum-mode .language-selector {
+    color: #040488;
+}
+
+body.quantum-mode #language-select {
+    background-color: #000000;
+    color: #040488;
+    border: 1px solid #040488;
+}
+
+/* Binary Flow - Matrix Style Integration */
+body.quantum-mode::after {
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(4, 4, 136, 0.5) 0%,
+        rgba(4, 4, 136, 0.5) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    animation: binary-flow 8s linear infinite;
     z-index: 0;
 }
 
-.binary-symbol {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 16px;
-    color: #1e90ff; /* Updated color to be more vibrant */
-    opacity: 0.7;
-    animation: drop 10s linear infinite; /* Slowed down the animation */
+@keyframes binary-flow {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 100%;
+    }
 }
 
-/* Binary Animation - Foreground (Non-background) */
-#foreground-binary {
+/* Binary Text Overlay - Updated */
+.binary-text {
     position: absolute;
+    color: #ffffff;
+    font-size: 16px;
+    z-index: 3;
+    animation: text-fade 12s infinite;
+}
+
+@keyframes text-fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Blue Binary Flow - Additional Effect */
+body.quantum-mode .binary-background {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 1;
-    color: #ffffff; /* Changed color from green to white */
-    font-size: 20px;
-    overflow: hidden;
-    opacity: 0.9;
+    z-index: -1;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 255, 0.3) 10%,
+        rgba(0, 0, 139, 0.8) 90%
+    );
+    animation: blue-binary-flow 10s linear infinite;
 }
 
-@keyframes drop {
-    0% {
-        transform: translateY(-100%);
+@keyframes blue-binary-flow {
+    from {
+        background-position: 0 0;
     }
-    100% {
-        transform: translateY(100%);
+    to {
+        background-position: 0 200%;
     }
 }
