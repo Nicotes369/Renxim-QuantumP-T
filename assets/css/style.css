@@ -1,4 +1,4 @@
-/* General Styles - Reset for Matrix Look */
+/* General Styles - Matrix Look Update */
 body {
     margin: 0;
     padding: 0;
@@ -35,48 +35,7 @@ body {
     cursor: pointer;
 }
 
-/* Background Binary Animation - Matrix Style */
-@keyframes matrixFlow {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100%); }
-}
-
-.binary-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    pointer-events: none;
-    color: #00bfff; /* Brighter blue color to match the matrix look */
-    opacity: 0.6;
-    font-size: 24px;
-    line-height: 1.8;
-    animation: matrixFlow 20s linear infinite;
-}
-
-/* Foreground Binary Animation - White Color */
-@keyframes binaryFlowWhite {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100%); }
-}
-
-.binary-fg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-    color: #ffffff; /* White color for foreground binary */
-    font-size: 20px;
-    line-height: 1.6;
-    animation: binaryFlowWhite 25s linear infinite;
-}
-
-/* Header Styles - Updated */
+/* Header Styles - Updated for Matrix Look */
 header {
     display: flex;
     flex-direction: column;
@@ -97,6 +56,7 @@ header {
     margin-bottom: 20px;
     text-align: center;
     text-transform: uppercase;
+    color: #00bfff; /* Updated to match the Matrix style */
     animation: glow 1.5s infinite alternate;
 }
 
@@ -107,15 +67,74 @@ header {
     color: #d3d3d3;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* Section Styles - Updated */
+section {
+    padding: 60px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 40px;
+    border-radius: 10px;
+    animation: slideUp 1.5s ease-out;
 }
 
-@keyframes glow {
-    0% { text-shadow: 0 0 5px #63b8ff, 0 0 10px #63b8ff, 0 0 15px #63b8ff; }
-    100% { text-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff; }
+/* Heading Styles - Updated */
+section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #4285f4;
+}
+
+/* Paragraph Styles - Updated */
+section p, section ul {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 20px auto;
+    color: #ffffff;
+}
+
+blockquote {
+    font-size: 24px;
+    font-style: italic;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    color: #ffdd57;
+}
+
+/* FAQ Styles - Improved */
+.faq-item {
+    margin-bottom: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.faq-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #4285f4;
+}
+
+.faq-item p {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #1e90ff;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #63b8ff;
+    transform: scale(1.1);
 }
 
 /* Footer Styles - Improved */
@@ -145,4 +164,20 @@ footer {
     font-size: 16px;
     margin-top: 20px;
     color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #63b8ff, 0 0 10px #63b8ff, 0 0 15px #63b8ff; }
+    100% { text-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
