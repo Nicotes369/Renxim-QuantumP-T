@@ -1,12 +1,7 @@
-/* General Styles - Improved */
 /* General Styles - Updated */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Orbitron', 'Noto Sans', 'Arial', sans-serif;
-    background: url('../images/background.gif') no-repeat center center fixed;
-    background-size: cover;
-    color: #ffffff;
     font-family: 'Orbitron', 'Noto Sans', 'Arial Unicode MS', sans-serif;
     background: #04040c;
     color: #4285f4;
@@ -83,7 +78,6 @@ header {
     color: #ffffff;
     box-shadow: 0px 0px 15px rgba(30, 144, 255, 0.8);
     transition: transform 0.3s ease;
-    font-weight: bold;
 }
 
 .contract-address:hover {
@@ -92,7 +86,6 @@ header {
 
 .contract-address span {
     margin-right: 10px;
-    color: #ffffff;
     color: #63b8ff;
 }
 
@@ -148,7 +141,6 @@ section h2 {
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
-    color: #63b8ff;
     color: #4285f4; /* Updated color */
 }
 
@@ -179,7 +171,6 @@ blockquote {
 .faq-item h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #63b8ff;
     color: #4285f4; /* Updated color */
 }
 
@@ -225,7 +216,6 @@ footer {
 
 .disclaimer {
     font-size: 14px;
-    color: #888888;
     color: #ffffff; /* Updated color */
 }
 
@@ -263,16 +253,16 @@ footer {
     .header-content h1 {
         font-size: 32px;
     }
-
+    
     .header-content p {
         font-size: 18px;
     }
-
+    
     .social-icons a img {
         width: 30px;
         height: 30px;
     }
-
+    
     /* Responsive Adjustments */
 }
 
@@ -290,9 +280,4 @@ footer {
 @keyframes slideUp {
     from { transform: translateY(100px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
-}
-/* Button Click Feedback - Copy Button */
-.contract-address button:active {
-    background-color: #4682b4;
-    transform: scale(0.95);
 }
