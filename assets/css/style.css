@@ -1,13 +1,11 @@
-/* assets/css/style.css */
-/* General Styles */
+/* General Styles - Improved */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans', 'Arial', sans-serif;
+    font-family: 'Orbitron', 'Noto Sans', 'Arial', sans-serif;
     background: url('../images/background.gif') no-repeat center center fixed;
     background-size: cover;
     color: #ffffff;
-    direction: ltr; /* Default direction */
     direction: ltr;
 }
 
@@ -37,7 +35,7 @@ body {
     cursor: pointer;
 }
 
-/* Header Styles */
+/* Header Styles - Updated */
 header {
     display: flex;
     flex-direction: column;
@@ -45,6 +43,7 @@ header {
     justify-content: center;
     padding: 100px 20px;
     background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 2s ease-in;
 }
 
 .logo {
@@ -56,12 +55,15 @@ header {
     font-size: 48px;
     margin-bottom: 20px;
     text-align: center;
+    text-transform: uppercase;
+    animation: glow 1.5s infinite alternate;
 }
 
 .header-content p {
     font-size: 24px;
     margin-bottom: 30px;
     text-align: center;
+    color: #d3d3d3;
 }
 
 /* Contract Address Styles - Improved */
@@ -75,10 +77,18 @@ header {
     padding: 15px;
     border-radius: 8px;
     color: #ffffff;
+    box-shadow: 0px 0px 15px rgba(30, 144, 255, 0.8);
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+.contract-address:hover {
+    transform: scale(1.05);
 }
 
 .contract-address span {
     margin-right: 10px;
+    color: #ffffff;
 }
 
 .contract-address button {
@@ -89,43 +99,50 @@ header {
     color: #ffffff;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contract-address button:hover {
     background-color: #63b8ff;
+    transform: scale(1.1);
 }
 
-/* Social Icons */
+/* Social Icons - Enhanced */
 .social-icons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    animation: fadeIn 2s ease-in;
 }
+
 .social-icons a {
     color: #ffffff;
     margin: 0 10px;
     text-decoration: none;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+    font-size: 1.8rem;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .social-icons a:hover {
-    color: #4285f4;
+    color: #63b8ff;
+    transform: scale(1.2);
 }
 
-/* Section Styles */
+/* Section Styles - Updated */
 section {
     padding: 60px 20px;
     background-color: rgba(0, 0, 0, 0.8);
     margin-bottom: 40px;
     border-radius: 10px;
+    animation: slideUp 1.5s ease-out;
 }
 
 section h2 {
     font-size: 36px;
     margin-bottom: 30px;
     text-align: center;
+    text-transform: uppercase;
+    color: #63b8ff;
 }
 
 section p, section ul {
@@ -144,14 +161,16 @@ blockquote {
     color: #ffdd57;
 }
 
-/* FAQ Styles */
+/* FAQ Styles - Improved */
 .faq-item {
     margin-bottom: 40px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 .faq-item h3 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: #63b8ff;
 }
 
 .faq-item p {
@@ -167,14 +186,15 @@ blockquote {
     font-size: 18px;
     margin-top: 20px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .buy-button:hover {
     background-color: #63b8ff;
+    transform: scale(1.1);
 }
 
-/* Footer Styles */
+/* Footer Styles - Improved */
 footer {
     text-align: center;
     padding: 40px 20px;
@@ -189,6 +209,7 @@ footer {
 
 .footer-content p {
     margin: 10px 0;
+    color: #888888;
 }
 
 .disclaimer {
@@ -201,22 +222,6 @@ footer {
     margin-top: 20px;
 }
 
-/* Quantum Computer Mode Styles */
-body.quantum-mode {
-    background-color: #000000;
-    direction: ltr; /* Reset direction */
-}
-body.quantum-mode #main-content {
-    display: none;
-}
-body.quantum-mode .language-selector {
-    color: #040488;
-}
-body.quantum-mode #language-select {
-    background-color: #000000;
-    color: #040488;
-    border: 1px solid #040488;
-}
 /* RTL Styles */
 [dir="rtl"] .language-selector {
     right: auto;
@@ -245,16 +250,37 @@ body.quantum-mode #language-select {
     .header-content h1 {
         font-size: 32px;
     }
-
+    
     .header-content p {
         font-size: 18px;
     }
-
+    
     .social-icons a img {
         width: 30px;
         height: 30px;
     }
-
-    /* その他の調整 */
+    
     /* Responsive Adjustments */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #63b8ff, 0 0 10px #63b8ff, 0 0 15px #63b8ff; }
+    100% { text-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Button Click Feedback - Copy Button */
+.contract-address button:active {
+    background-color: #4682b4;
+    transform: scale(0.95);
 }
