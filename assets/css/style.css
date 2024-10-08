@@ -1,12 +1,12 @@
-/* General Styles - Matrix Look Update */
+/* General Styles - Improved */
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Orbitron', 'Noto Sans', 'Arial Unicode MS', sans-serif;
-    background: #000000;
-    color: #4285f4;
+    font-family: 'Orbitron', 'Noto Sans', 'Arial', sans-serif;
+    background: url('../images/background.gif') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
     direction: ltr;
-    overflow: hidden;
 }
 
 #main-content {
@@ -35,7 +35,7 @@ body {
     cursor: pointer;
 }
 
-/* Header Styles - Updated for Matrix Look */
+/* Header Styles - Updated */
 header {
     display: flex;
     flex-direction: column;
@@ -56,7 +56,6 @@ header {
     margin-bottom: 20px;
     text-align: center;
     text-transform: uppercase;
-    color: #00bfff; /* Updated to match the Matrix style */
     animation: glow 1.5s infinite alternate;
 }
 
@@ -65,6 +64,68 @@ header {
     margin-bottom: 30px;
     text-align: center;
     color: #d3d3d3;
+}
+
+/* Contract Address Styles - Improved */
+.contract-address {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    color: #ffffff;
+    box-shadow: 0px 0px 15px rgba(30, 144, 255, 0.8);
+    transition: transform 0.3s ease;
+    font-weight: bold;
+}
+
+.contract-address:hover {
+    transform: scale(1.05);
+}
+
+.contract-address span {
+    margin-right: 10px;
+    color: #ffffff;
+}
+
+.contract-address button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #1e90ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contract-address button:hover {
+    background-color: #63b8ff;
+    transform: scale(1.1);
+}
+
+/* Social Icons - Enhanced */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in;
+}
+
+.social-icons a {
+    color: #ffffff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: #63b8ff;
+    transform: scale(1.2);
 }
 
 /* Section Styles - Updated */
@@ -76,22 +137,19 @@ section {
     animation: slideUp 1.5s ease-out;
 }
 
-/* Heading Styles - Updated */
 section h2 {
     font-size: 36px;
     margin-bottom: 30px;
     text-align: center;
     text-transform: uppercase;
-    color: #4285f4;
+    color: #63b8ff;
 }
 
-/* Paragraph Styles - Updated */
 section p, section ul {
     font-size: 18px;
     line-height: 1.6;
     max-width: 800px;
     margin: 0 auto 20px auto;
-    color: #ffffff;
 }
 
 blockquote {
@@ -100,7 +158,7 @@ blockquote {
     text-align: center;
     margin: 40px auto;
     max-width: 800px;
-    color: #ffffff;
+    color: #ffdd57;
 }
 
 /* FAQ Styles - Improved */
@@ -112,12 +170,11 @@ blockquote {
 .faq-item h3 {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #4285f4;
+    color: #63b8ff;
 }
 
 .faq-item p {
     font-size: 18px;
-    color: #ffffff;
 }
 
 .buy-button {
@@ -157,13 +214,53 @@ footer {
 
 .disclaimer {
     font-size: 14px;
-    color: #ffffff;
+    color: #888888;
 }
 
 .final-message {
     font-size: 16px;
     margin-top: 20px;
-    color: #ffffff;
+}
+
+/* RTL Styles */
+[dir="rtl"] .language-selector {
+    right: auto;
+    left: 10px;
+}
+
+[dir="rtl"] header {
+    text-align: center;
+}
+
+[dir="rtl"] .contract-address {
+    justify-content: center;
+    text-align: center;
+}
+
+[dir="rtl"] .social-icons {
+    justify-content: center;
+}
+
+[dir="rtl"] .contract-address span {
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 32px;
+    }
+    
+    .header-content p {
+        font-size: 18px;
+    }
+    
+    .social-icons a img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /* Responsive Adjustments */
 }
 
 /* Animations */
@@ -180,4 +277,10 @@ footer {
 @keyframes slideUp {
     from { transform: translateY(100px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+/* Button Click Feedback - Copy Button */
+.contract-address button:active {
+    background-color: #4682b4;
+    transform: scale(0.95);
 }
