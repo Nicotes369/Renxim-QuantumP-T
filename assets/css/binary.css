@@ -1,11 +1,11 @@
-/* Quantum Computer Mode Styles - Matrix Update */
+/* Quantum Computer Mode - Matrix Look Update */
 body.quantum-mode {
     background-color: #000000;
     overflow: hidden;
 }
 
-/* Background Binary Animation - Matrix Style */
-@keyframes matrixFlow {
+/* Background binary animation (blue binary) */
+@keyframes matrixFlowBlue {
     0% { transform: translateY(0); }
     100% { transform: translateY(100%); }
 }
@@ -22,10 +22,10 @@ body.quantum-mode {
     opacity: 0.8;
     font-size: 20px;
     line-height: 1.5;
-    animation: matrixFlow 30s linear infinite; /* Slower, smooth animation */
+    animation: matrixFlowBlue 25s linear infinite;
 }
 
-/* Foreground Binary Animation - White Binary */
+/* Foreground binary text (white) */
 .binary-fg {
     position: fixed;
     top: 0;
@@ -34,8 +34,13 @@ body.quantum-mode {
     height: 100%;
     z-index: 0;
     pointer-events: none;
-    color: #ffffff; /* White text for better contrast */
+    color: #ffffff; /* White text color */
     font-size: 24px;
     line-height: 1.8;
-    animation: matrixFlow 20s linear infinite; /* Slightly faster animation */
+    animation: matrixFlow 15s linear infinite;
+}
+
+@keyframes matrixFlow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
 }
