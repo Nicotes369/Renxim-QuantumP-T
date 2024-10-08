@@ -1,11 +1,8 @@
-/* assets/css/binary.css */
-
-/* Quantum Computer Mode Styles */
+/* Quantum Computer Mode Styles - Enhanced */
 body.quantum-mode {
     background-color: #000000;
-    direction: ltr; /* Reset direction */
-    color: #00ff00; /* Classic green for binary text */
-    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    direction: ltr;
 }
 
 body.quantum-mode #main-content {
@@ -13,66 +10,57 @@ body.quantum-mode #main-content {
 }
 
 body.quantum-mode .language-selector {
-    color: #00ff00;
+    color: #040488;
 }
 
 body.quantum-mode #language-select {
     background-color: #000000;
-    color: #00ff00;
-    border: 1px solid #00ff00;
+    color: #040488;
+    border: 1px solid #040488;
 }
 
-body.quantum-mode .contract-address {
-    color: #00ff00;
+/* Binary Flow - Matrix Style Integration */
+body.quantum-mode::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(4, 4, 136, 0.5) 0%,
+        rgba(4, 4, 136, 0.5) 2px,
+        transparent 2px,
+        transparent 8px
+    );
+    animation: binary-flow 5s linear infinite;
+    z-index: 0;
 }
 
-body.quantum-mode .copy-icon {
-    background-color: #00ff00;
-    color: #000000;
-    border: 1px solid #00ff00;
-}
-
-body.quantum-mode .copy-icon:hover {
-    background-color: #ffffff;
-    color: #00ff00;
-}
-
-body.quantum-mode .social-icons a {
-    color: #00ff00;
-}
-
-/* Quantum Effect for Headers */
-body.quantum-mode h1, body.quantum-mode h2 {
-    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
-}
-
-/* Quantum Binary Animation */
-@keyframes binary-flicker {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
-}
-
-body.quantum-mode .binary-text {
-    animation: binary-flicker 1s infinite;
-}
-
-/* Responsive Quantum Styles */
-@media (max-width: 768px) {
-    body.quantum-mode {
-        font-size: 14px;
+@keyframes binary-flow {
+    from {
+        background-position: 0 0;
     }
-
-    body.quantum-mode #language-select {
-        font-size: 14px;
+    to {
+        background-position: 0 100%;
     }
+}
 
-    body.quantum-mode .copy-icon {
-        padding: 8px;
-        font-size: 18px;
+/* Binary Text Overlay */
+.binary-text {
+    position: absolute;
+    color: #ffffff;
+    font-size: 16px;
+    z-index: 3;
+    animation: text-fade 10s infinite;
+}
+
+@keyframes text-fade {
+    0%, 100% {
+        opacity: 0;
     }
-
-    body.quantum-mode h1, body.quantum-mode h2 {
-        font-size: 24px;
+    50% {
+        opacity: 1;
     }
 }
