@@ -126,7 +126,18 @@
 
     <!-- Scripts -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/binary.js"></script>
     <script src="assets/js/language.js"></script>
+    <script>
+        document.getElementById('language-select').addEventListener('change', function() {
+            if (this.value === 'qc') {
+                document.body.classList.add('quantum-mode');
+                initializeBinaryAnimation(); // バイナリアニメーションを確実に初期化する
+            } else {
+                document.body.classList.remove('quantum-mode');
+            }
+        });
+    </script>
     <script>
         function copyAddress() {
             const address = '0xfE7Aa1F52633b0812bCAAa3fab4A4e2D3182Dbc4';
