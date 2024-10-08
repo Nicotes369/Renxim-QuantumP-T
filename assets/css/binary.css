@@ -1,3 +1,4 @@
+/* Quantum Computer Mode - Binary Animation Styles */
 /* General Styles - Updated */
 body {
     margin: 0;
@@ -5,14 +6,8 @@ body {
     font-family: 'Orbitron', 'Noto Sans', 'Arial Unicode MS', sans-serif;
     background: #04040c;
     color: #4285f4;
-/* Binary Mode Styles - Enhanced */
-body.quantum-mode {
-    background-color: #000000;
-    overflow: hidden;
-    color: #ffffff;
     direction: ltr;
 }
-
 #main-content {
     position: relative;
     z-index: 1;
@@ -22,9 +17,6 @@ body.quantum-mode {
 }
 /* Language Selector */
 .language-selector {
-/* Background Binary Flow - Improved */
-body.quantum-mode::after {
-    content: "";
     position: fixed;
     top: 10px;
     right: 10px;
@@ -164,36 +156,11 @@ blockquote {
 .faq-item p {
     font-size: 18px;
     color: #ffffff; /* Updated color */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(4, 4, 136, 0.5) 0%,
-        rgba(4, 4, 136, 0.5) 2px,
-        transparent 2px,
-        transparent 8px
-    );
-    animation: binary-flow 10s linear infinite;
-    z-index: 0;
 }
-@keyframes binary-flow {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 0 100%;
-    }
-}
-
 .buy-button {
     display: inline-block;
     padding: 15px 30px;
     background-color: #1e90ff;
-/* Binary Text Overlay - Improved */
-.binary-text {
-    position: absolute;
     color: #ffffff;
     text-decoration: none;
     font-size: 18px;
@@ -228,40 +195,97 @@ footer {
     font-size: 16px;
     margin-top: 20px;
     color: #ffffff; /* Updated color */
-    font-size: 20px; /* Updated for better visibility */
-    z-index: 3;
-    animation: text-fade 10s infinite;
 }
-
 /* Quantum Computer Mode Styles */
 body.quantum-mode {
     background-color: #000000;
     overflow: hidden;
-@keyframes text-fade {
-    0%, 100% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
 }
 
-/* Quantum Computer Mode Specific Styles */
+/* Background Binary Stream Animation */
+.binary-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    animation: binaryBackgroundFlow 30s linear infinite;
+}
+@keyframes binaryBackgroundFlow {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
 body.quantum-mode #main-content {
     display: none;
 }
-@@ -245,59 +67,14 @@ body.quantum-mode #language-select {
+
+/* Improved Binary Character Styling */
+.binary-character {
+    position: absolute;
+    color: #00bfff; /* More vibrant blue for visibility */
+    font-size: 20px;
+    animation: drop 10s linear infinite;
+body.quantum-mode .language-selector {
+    color: #040488;
+}
+
+@keyframes drop {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+body.quantum-mode #language-select {
+    background-color: #000000;
+    color: #040488;
     border: 1px solid #040488;
 }
 
+/* Non-Background Binary Characters */
+.non-background-binary {
+    color: #ffffff; /* Updated to white for better visibility */
+    animation: glowBinaryText 1.5s infinite alternate;
 /* RTL Styles */
 [dir="rtl"] .language-selector {
     right: auto;
     left: 10px;
 }
+
+@keyframes glowBinaryText {
+    0% {
+        text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+    }
+    100% {
+        text-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px #ffffff;
+    }
 [dir="rtl"] header {
     text-align: center;
 }
+
+/* Other Improvements */
+.binary-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
 [dir="rtl"] .contract-address {
     justify-content: center;
     text-align: center;
@@ -273,7 +297,10 @@ body.quantum-mode #main-content {
     margin-right: 10px;
     margin-left: 0;
 }
+
 @media (max-width: 768px) {
+    .binary-character {
+        font-size: 16px;
     .header-content h1 {
         font-size: 32px;
     }
@@ -297,17 +324,8 @@ body.quantum-mode #main-content {
 @keyframes glow {
     0% { text-shadow: 0 0 5px #63b8ff, 0 0 10px #63b8ff, 0 0 15px #63b8ff; }
     100% { text-shadow: 0 0 20px #1e90ff, 0 0 30px #1e90ff, 0 0 40px #1e90ff; }
-.language-selector {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 2;
 }
-
 @keyframes slideUp {
     from { transform: translateY(100px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
-.language-selector select {
-    color: #040488;
-    background-color: #000000;
 }
