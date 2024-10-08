@@ -5,9 +5,19 @@
     <title>Renxim (RXM) — The Coolest Quantum Meme on QL1 Ecosystem</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/binary.css">
     <style>
         body {
             font-family: 'Orbitron', 'Noto Sans', 'Arial Unicode MS', sans-serif;
+            background-color: #04040c;
+            color: #4285f4;
+        }
+    </style>
+    <style>
+        body {
+            font-family: 'Orbitron', 'Noto Sans', 'Arial Unicode MS', sans-serif;
+            background-color: #04040c;
+            color: #4285f4;
         }
     </style>
     <link rel="stylesheet" href="assets/css/binary.css">
@@ -140,6 +150,18 @@
     <script src="assets/js/language.js"></script>
     <script>
         document.getElementById('language-select').addEventListener('change', function() {
+            if (this.value === 'qc') {
+                document.body.classList.add('quantum-mode');
+                initializeBinaryAnimation(); // バイナリアニメーションを確実に初期化する
+                document.body.style.setProperty('--binary-color', '#00bfff'); // 青文字をより鮮やかに
+                document.querySelectorAll('.binary-text').forEach(element => {
+                    element.style.color = '#ffffff'; // 背景以外のバイナリ文字を白に修正
+                });
+            } else {
+                document.body.classList.remove('quantum-mode');
+                document.body.style.removeProperty('--binary-color');
+            }
+        });
             if (this.value === 'qc') {
                 document.body.classList.add('quantum-mode');
                 initializeBinaryAnimation(); // バイナリアニメーションを確実に初期化する
