@@ -6,16 +6,3 @@
 - Include subtle glowing effects to give a high-tech, sleek look.
 - Style: Sharp and modern, potentially with digital or fragmented elements to emphasize the quantum nature.
 
-/* Background (background.gif): */
-- Update the background to be a dynamic animation, inspired by the "Matrix"-style cascading binary code, but with a modern twist.
-- Animation: Cascading blue numbers (0 and 1) falling from top to bottom, similar to the visual effect described previously.
-- Colors: Ensure the blue is vibrant, with different brightness levels to create depth and contrast with the darker background.
-- Add a reflective ground surface effect that visually extends the digital space, creating an immersive 3D-like environment.
-
-/* Additional Images: */
-- Infographic (timeline-infographic.png): Create a timeline image that visually represents the key message and important dates for Renxim (RXM).
-- Design: Use elements like glowing paths, nodes, and digital markers to create an engaging flow, emphasizing the coincidence and quantum nature of the dates.
-
-/* Guidelines: */
-- All images should match the overall quantum and futuristic theme.
-- Ensure a cohesive look across the website by maintaining consistent color schemes and styles.
