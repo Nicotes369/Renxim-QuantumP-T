@@ -4,7 +4,7 @@ body.quantum-mode {
     overflow: hidden;
 }
 
-/* Background Binary Stream Animation - Improved */
+/* Background Binary Stream Animation - Matrix Style */
 body.quantum-mode::after {
     content: "";
     position: fixed;
@@ -14,17 +14,17 @@ body.quantum-mode::after {
     height: 100%;
     background: repeating-linear-gradient(
         to bottom,
-        rgba(0, 191, 255, 0.6) 0%,
-        rgba(0, 191, 255, 0.6) 2px,
+        rgba(0, 119, 190, 0.8) 0%,
+        rgba(0, 119, 190, 0.8) 2px,
         transparent 2px,
         transparent 8px
     );
-    animation: binaryFlowNeon 10s linear infinite;
+    animation: binaryFlowMatrix 20s linear infinite;
     z-index: 0;
-    filter: brightness(1.5) drop-shadow(0 0 10px #00bfff);
+    filter: brightness(1.2) drop-shadow(0 0 8px #0077be);
 }
 
-@keyframes binaryFlowNeon {
+@keyframes binaryFlowMatrix {
     from {
         background-position: 0 0;
     }
@@ -36,21 +36,21 @@ body.quantum-mode::after {
 /* Improved Binary Character Styling */
 .binary-character {
     position: absolute;
-    color: #00bfff;
-    font-size: 24px;
-    text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
-    animation: dropNeon 12s linear infinite;
+    color: #0077be; /* Softer blue to match the reference */
+    font-size: 22px;
+    text-shadow: 0 0 8px #0077be, 0 0 16px #0077be;
+    animation: dropMatrix 15s linear infinite;
 }
 
-@keyframes dropNeon {
+@keyframes dropMatrix {
     0% {
         top: -10%;
         opacity: 0;
     }
-    10% {
+    20% {
         opacity: 1;
     }
-    90% {
+    80% {
         opacity: 1;
     }
     100% {
