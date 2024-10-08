@@ -1,112 +1,71 @@
-// assets/js/language.js
+// JavaScript for Language Handling and Quantum Computer Mode
+document.addEventListener('DOMContentLoaded', () => {
+    const body = document.body;
+    const languageSelect = document.getElementById('language-select');
 
-// Define RTL languages
-const rtlLanguages = ['ar', 'he'];
+    // Initial check for Quantum Computer mode
+    if (languageSelect.value === 'qc') {
+        body.classList.add('quantum-mode');
+        initializeBinaryRain();
+    }
 
-// Language Selection and Content Loading
-const languageSelect = document.getElementById('language-select');
-let currentLanguage = 'en'; // Default language
+    // Language select event listener to handle mode change
+    languageSelect.addEventListener('change', (e) => {
+        if (e.target.value === 'qc') {
+            body.classList.add('quantum-mode');
+            initializeBinaryRain();
+        } else {
+            body.classList.remove('quantum-mode');
+            removeBinaryRain();
+        }
+        updateLanguage(e.target.value);
+    });
+});
 
-let binaryCssLoaded = false;
-let binaryJsLoaded = false;
-
-function loadLanguage(lang) {
-    fetch(`assets/languages/${lang}.json`)
-        .then(response => response.json())
-        .then(data => {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
+function updateLanguage(language) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    fetch(`assets/languages/${language}.json`)
+        .then((response) => response.json())
+        .then((translations) => {
+            elements.forEach((element) => {
                 const key = element.getAttribute('data-i18n');
-                if (data[key]) {
-                    element.innerHTML = data[key];
+                if (translations[key]) {
+                    element.textContent = translations[key];
                 }
             });
-            setDirection(lang);
         })
-        .catch(error => {
-            console.error(`Error loading language file: ${lang}.json`, error);
+        .catch((error) => {
+            console.error('Error loading language file:', error);
         });
 }
 
-function setDirection(lang) {
-    if (rtlLanguages.includes(lang)) {
-        document.documentElement.setAttribute('dir', 'rtl');
-        document.documentElement.setAttribute('lang', lang);
-    } else {
-        document.documentElement.setAttribute('dir', 'ltr');
-        document.documentElement.setAttribute('lang', lang);
+// Quantum Computer Mode Initialization
+function initializeBinaryRain() {
+    const binaryBg = document.createElement('div');
+    binaryBg.classList.add('binary-bg');
+    document.body.appendChild(binaryBg);
+
+    for (let i = 0; i < 100; i++) {
+        createBinaryStream(binaryBg);
     }
 }
 
-languageSelect.addEventListener('change', function() {
-    const selectedLanguage = this.value;
-    if (selectedLanguage === 'qc') {
-        document.body.classList.add('quantum-mode');
-        // Dynamically load binary.css if not already loaded
-        if (!binaryCssLoaded) {
-            const link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = 'assets/css/binary.css';
-            link.id = 'binary-css';
-            document.head.appendChild(link);
-            binaryCssLoaded = true;
-        }
-        // Dynamically load binary.js if not already loaded
-        if (!binaryJsLoaded) {
-            const script = document.createElement('script');
-            script.src = 'assets/js/binary.js';
-            script.id = 'binary-js';
-            document.body.appendChild(script);
-            binaryJsLoaded = true;
-        }
-    } else {
-        document.body.classList.remove('quantum-mode');
-        // Remove binary.css
-        if (binaryCssLoaded) {
-            const link = document.getElementById('binary-css');
-            if (link) {
-                link.remove();
-                binaryCssLoaded = false;
-            }
-        }
-        // Remove binary.js
-        if (binaryJsLoaded) {
-            const script = document.getElementById('binary-js');
-            if (script) {
-                script.remove();
-                binaryJsLoaded = false;
-            }
-            // Stop the binary effect if it's running
-            if (typeof window.stopBinaryEffect === 'function') {
-                window.stopBinaryEffect();
-            }
-        }
-        // Load the selected language
-        loadLanguage(selectedLanguage);
+function createBinaryStream(container) {
+    const binaryStream = document.createElement('div');
+    binaryStream.classList.add('binary-char');
+    binaryStream.style.left = Math.random() * 100 + 'vw';
+    binaryStream.style.animationDuration = 10 + Math.random() * 20 + 's';
+    binaryStream.textContent = Math.random() > 0.5 ? '0' : '1';
+    container.appendChild(binaryStream);
+
+    setInterval(() => {
+        binaryStream.textContent = Math.random() > 0.5 ? '0' : '1';
+    }, 500);
+}
+
+function removeBinaryRain() {
+    const binaryBg = document.querySelector('.binary-bg');
+    if (binaryBg) {
+        binaryBg.remove();
     }
-    showLanguageChangeNotification(selectedLanguage);
-});
-
-// Initial language load
-document.addEventListener('DOMContentLoaded', () => {
-    loadLanguage(currentLanguage);
-});
-
-// Show Language Change Notification
-function showLanguageChangeNotification(lang) {
-    const notification = document.createElement('div');
-    notification.innerText = `Language changed to ${lang}`;
-    notification.style.position = 'fixed';
-    notification.style.bottom = '20px';
-    notification.style.right = '20px';
-    notification.style.padding = '10px';
-    notification.style.backgroundColor = '#040488';
-    notification.style.color = '#ffffff';
-    notification.style.borderRadius = '5px';
-    notification.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.5)';
-    notification.style.zIndex = '1000';
-    document.body.appendChild(notification);
-
-    setTimeout(() => {
-        notification.remove();
-    }, 2000);
 }
